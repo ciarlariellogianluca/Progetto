@@ -3,11 +3,8 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 
-public class Event {
-	private String id;
-	private String sito;
-	private String tipo;
-	private String nome;
+public class Event extends Events{
+	
 	private String luogo;
 	private String prezzo_range;
 	private String data;
@@ -16,49 +13,13 @@ public class Event {
 	private String promotore;
 	
 	public Event() {
-		this.id = null;
-		this.sito = null;
-		this.tipo = null;
-		this.nome = null;
+		super();
 		this.luogo = null;
 		this.prezzo_range = null;
 		this.data = null;
 		this.sale = null;
 		this.presale = new ArrayList<String>();
 		this.promotore = null;
-	}
-	
-	
-	public String getId() {
-		return id;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	public String getSito() {
-		return sito;
-	}
-	
-	public void setSito(String sito) {
-		this.sito = sito;
-	}
-	
-	public String getTipo() {
-		return tipo;
-	}
-	
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 	
 	public String getLuogo() {

@@ -14,12 +14,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 public class TicketMasterApi {
 	
-	public static JSONObject ApiData() {
+	public static JSONObject ApiData(String events) {
 		String apikey = GetApiKey();
 		String data = "";
 		String line = "";
 		try {
-			String url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey;
+			String url = "https://app.ticketmaster.com/discovery/v2/"+events+".json?apikey="+apikey;
 			URLConnection openConnection = new URL(url).openConnection();
 			InputStream in = openConnection.getInputStream();
 			try {
@@ -30,7 +30,7 @@ public class TicketMasterApi {
 				in.close();
 			}
 		} catch (Exception e) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Evento non esistente fare la chiamata /events per vedere cosa viene monitorato");
 		}
 		JSONObject json_data = new JSONObject(data);
 		return json_data;
