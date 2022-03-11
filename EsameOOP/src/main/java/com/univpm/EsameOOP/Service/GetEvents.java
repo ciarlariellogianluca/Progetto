@@ -15,7 +15,7 @@ import com.univpm.EsameOOP.Model.Events;
 import com.univpm.EsameOOP.Model.Venue;
 
 @Service
-public class JSONParsing {
+public class GetEvents {
 	
 	public ArrayList<Events> Parsing(String events) throws IOException,JSONException{
 
@@ -49,6 +49,7 @@ public class JSONParsing {
 			evento.setSito(obj.getString("url"));
 			evento.setTipo(obj.getString("type"));
 			evento.setNome(obj.getString("name"));
+			((Attraction) evento).setGeneri(obj.getJSONArray("classifications"));
 			
 			events.add(evento);
 		}
@@ -119,7 +120,6 @@ public class JSONParsing {
 				((Event) evento).setData("Unavailable");
 			}
 			try {
-				System.out.println(obj.getJSONObject("sales").getJSONArray("presales"));
 				((Event) evento).setPresale(obj.getJSONObject("sales").getJSONArray("presales"));
 			} catch(JSONException e) {
 				((Event) evento).setPresale(null);
@@ -130,6 +130,7 @@ public class JSONParsing {
 				((Event) evento).setPromotore("Unavailable");
 			}
 			((Event) evento).setSale(obj.getJSONObject("sales").getJSONObject("public").getString("startDateTime"));
+			((Event) evento).setGeneri(obj.getJSONArray("classifications"));
 			
 			events.add(evento);
 		}
