@@ -17,6 +17,7 @@ import com.univpm.EsameOOP.Filters.FiltersBodyClass;
 import com.univpm.EsameOOP.Filters.Filters;
 import com.univpm.EsameOOP.Model.EventsClass;
 import com.univpm.EsameOOP.Service.GetEvents;
+import com.univpm.EsameOOP.Statistics.Stats;
 
 @RestController
 public class Controller {
@@ -27,6 +28,8 @@ public class Controller {
 	EventsClass eventi;
 	@Autowired
 	Filters filter;
+	@Autowired
+	Stats stat;
 	
 	
 	@GetMapping(value="/{events}")
@@ -45,7 +48,7 @@ public class Controller {
 	 }
 	 
 	 @PostMapping(value="/stats")
-	 public ResponseEntity<Object> ShowStats(@RequestBody FiltersBodyClass body) {
-		 return new ResponseEntity<>(null,HttpStatus.OK);
+	 public ResponseEntity<Object> ShowStats(@RequestBody FiltersBodyClass body) throws JSONException, IOException, ParseException {
+		 return new ResponseEntity<>(stat.Statistics(body),HttpStatus.OK);
 	 }
 }

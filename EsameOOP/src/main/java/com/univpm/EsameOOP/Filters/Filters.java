@@ -23,6 +23,17 @@ public class Filters {
 		GetEvents getEvent = new GetEvents();
 		eventi = getEvent.Parsing("events");
 		
+		eventi = filterGenere(body, eventi);
+		eventi = filterLuogo(body, eventi);
+		eventi = filterData(body, eventi);
+		
+		if (eventi.isEmpty())
+			e = new CustomException("Lista vuota");
+		
+		return eventi;
+	}
+	
+	public ArrayList<Events> filterGenere(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getGenere() != "" && body.getGenere() != null && eventi != null) {
 			for (int i=0;i<eventi.size();i++) {
 				if (((Event) eventi.get(i)).getGeneri().contains(body.getGenere()) == false) {
@@ -31,7 +42,10 @@ public class Filters {
 				}
 			}
 		}
-		
+		return eventi;
+	}
+	
+	public ArrayList<Events> filterLuogo(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getLuogo() != "" && body.getLuogo() != null && eventi != null) {
 			for (int i=0;i<eventi.size();i++) {
 				if (!((Event) eventi.get(i)).getLuogo().contains(body.getLuogo())) {
@@ -40,7 +54,10 @@ public class Filters {
 				}
 			}
 		}
-		
+		return eventi;
+	}
+	
+	public ArrayList<Events> filterData(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getData() != "" && body.getData() != null && eventi != null) {
 			LocalDate data = LocalDate.parse(body.getData());
 			System.out.println(eventi);
@@ -59,10 +76,7 @@ public class Filters {
 				}
 			}
 		}
-		
-		if (eventi.isEmpty())
-			e = new CustomException("Lista vuota");
-		
 		return eventi;
 	}
+	
 }
