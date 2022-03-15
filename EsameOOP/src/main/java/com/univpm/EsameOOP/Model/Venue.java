@@ -2,7 +2,8 @@ package com.univpm.EsameOOP.Model;
 
 /**
  * Classe che estende Events e modella le sedi.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

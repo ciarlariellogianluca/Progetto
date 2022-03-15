@@ -6,7 +6,8 @@ import org.json.JSONArray;
 
 /**
  * Classe che estende Events e modella le attrazioni.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

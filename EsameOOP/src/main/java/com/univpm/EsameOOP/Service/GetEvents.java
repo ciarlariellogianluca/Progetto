@@ -16,7 +16,8 @@ import com.univpm.EsameOOP.Model.Venue;
 
 /**
  * Classe che restituisce eventi, attrazioni o sedi in base ad un parametro events passato.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

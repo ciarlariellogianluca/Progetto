@@ -5,7 +5,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  * Classe per eccezione personalizzata, che estende Exception 
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

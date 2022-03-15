@@ -5,7 +5,8 @@ import org.json.JSONArray;
 
 /**
  * Classe che estende Events e modella gli eventi.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

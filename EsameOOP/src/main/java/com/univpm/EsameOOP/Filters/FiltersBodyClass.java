@@ -2,7 +2,8 @@ package com.univpm.EsameOOP.Filters;
 
 /**
  * Classe utilizzata per inserire i dati e ottenere filtri e statistiche.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

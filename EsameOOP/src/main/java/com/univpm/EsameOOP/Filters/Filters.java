@@ -15,8 +15,8 @@ import com.univpm.EsameOOP.Service.GetEvents;
 
 /**
  * Classe per il filtraggio dei dati degli eventi in base al luogo, la data e il genere
- * @author 99fly
- *c iciajsjwj
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  */
 
 @Service

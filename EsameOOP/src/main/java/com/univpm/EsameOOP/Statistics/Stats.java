@@ -19,7 +19,8 @@ import com.univpm.EsameOOP.Service.GetEvents;
 
 /**
  * Classe per visualizzare le statistiche su eventi filtrati
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

@@ -21,7 +21,8 @@ import com.univpm.EsameOOP.Statistics.Stats;
 
 /**
  * Classe per la gestione di tutte le chiamate al server
- *
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  */
 
 @RestController

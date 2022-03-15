@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 /**
  * Classe che modella le statistiche degli eventi filtrati
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

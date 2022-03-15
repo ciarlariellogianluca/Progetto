@@ -14,7 +14,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  * Classe per andare a prelevare e restituire i dati tramite API di TicketMaster attraverso un parametro e un'apikey.
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 

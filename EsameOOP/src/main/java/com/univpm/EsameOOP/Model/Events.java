@@ -2,7 +2,8 @@ package com.univpm.EsameOOP.Model;
 
 /**
  * Superclasse con metodi get e set per gli attributi comuni tra classi
- * @author 99fly
+ * @author Gianluca Ciarlariello
+ * @author Gianmarco Di Renzo
  *
  */
 
