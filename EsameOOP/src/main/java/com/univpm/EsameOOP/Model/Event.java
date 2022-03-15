@@ -3,6 +3,12 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 
+/**
+ * Classe che estende Events e modella gli eventi.
+ * @author 99fly
+ *
+ */
+
 public class Event extends Events{
 	
 	private String luogo;
@@ -23,6 +29,22 @@ public class Event extends Events{
 		this.promotore = null;
 		this.generi = null;
 	}
+	
+	public Event(String luogo, String prezzo_range, String data, String sale, JSONArray presale, String promotore, JSONArray genere) {
+		super();
+		this.setLuogo(luogo);
+		this.setPrezzo_range(prezzo_range);
+		this.setData(data);
+		this.setSale(sale);
+		this.setPresale(presale);
+		this.setPromotore(promotore);
+		this.setGeneri(genere);
+	}
+	
+	/**
+	 * Metodi get e set di tutti gli attributi
+	 * @return
+	 */
 	
 	public String getLuogo() {
 		return luogo;
@@ -83,8 +105,6 @@ public class Event extends Events{
 		String segment = null;
 		String genre = null;
 		String subGenre = null;
-		String type = null;
-		String subType = null;
 		if(jsonArray != null) {
 			try {
 				segment = jsonArray.getJSONObject(0).getJSONObject("segment").getString("name");
@@ -101,17 +121,7 @@ public class Event extends Events{
 			} catch(Exception e) {
 				subGenre = "";
 			}
-			try {
-				type = jsonArray.getJSONObject(0).getJSONObject("type").getString("name");
-			} catch(Exception e) {
-				type = "";
-			}
-			try {
-				subType = jsonArray.getJSONObject(0).getJSONObject("subType").getString("name");
-			} catch(Exception e) {
-				subType = "";
-			}
-			this.generi = segment+", "+genre+", "+subGenre+", "+type+", "+subType;
+			this.generi = segment+", "+genre+", "+subGenre;
 		}
 	}
 	

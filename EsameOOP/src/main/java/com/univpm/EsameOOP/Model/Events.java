@@ -1,5 +1,11 @@
 package com.univpm.EsameOOP.Model;
 
+/**
+ * Superclasse con metodi get e set per gli attributi comuni tra classi
+ * @author 99fly
+ *
+ */
+
 public abstract class Events {
 	
 	private String id;
@@ -13,6 +19,11 @@ public abstract class Events {
 		this.tipo = null;
 		this.nome = null;
 	}
+	
+	/**
+	 * Metodi get e set di tutti gli attributi
+	 * @return
+	 */
 	
 	public String getId() {
 		return id;

@@ -2,6 +2,12 @@ package com.univpm.EsameOOP.Model;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * Classe per visualizzare le rotte da effettuare
+ * @author 99fly
+ *
+ */
+
 @Service
 public class EventsClass {
 	

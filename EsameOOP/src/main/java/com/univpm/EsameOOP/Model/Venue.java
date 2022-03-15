@@ -1,9 +1,15 @@
 package com.univpm.EsameOOP.Model;
 
+/**
+ * Classe che estende Events e modella le sedi.
+ * @author 99fly
+ *
+ */
+
 public class Venue extends Events{
 	
 	private String luogo;
-	private String città;
+	private String citta;
 	private String indirizzo;
 	private String numero;
 	private String info_pagamento;
@@ -11,7 +17,7 @@ public class Venue extends Events{
 	public Venue() {
 		super();
 		this.luogo = null;
-		this.città = null;
+		this.citta = null;
 		this.indirizzo = null;
 		this.numero = null;
 		this.info_pagamento = null;
@@ -25,12 +31,12 @@ public class Venue extends Events{
 		this.luogo = luogo;
 	}
 	
-	public String getCittà() {
-		return città;
+	public String getCitta() {
+		return citta;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCitta(String citta) {
+		this.citta = citta;
 	}
 
 	public String getIndirizzo() {

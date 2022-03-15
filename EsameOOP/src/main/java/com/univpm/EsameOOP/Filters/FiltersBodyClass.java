@@ -1,5 +1,11 @@
 package com.univpm.EsameOOP.Filters;
 
+/**
+ * Classe utilizzata per inserire i dati e ottenere filtri e statistiche.
+ * @author 99fly
+ *
+ */
+
 public class FiltersBodyClass {
 	
 	private String luogo;
@@ -11,6 +17,10 @@ public class FiltersBodyClass {
 		this.setData(data);
 		this.setGenere(genere);
 	}
+	
+	/**
+	 * Metodi di get e set per tutti gli attributi della classe
+	 */
 
 	public String getLuogo() {
 		return luogo;

@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import org.json.JSONArray;
 
+/**
+ * Classe che estende Events e modella le attrazioni.
+ * @author 99fly
+ *
+ */
+
 public class Attraction extends Events {
 	
 	private ArrayList<String> generi;
@@ -21,8 +27,6 @@ public class Attraction extends Events {
 		String segment = null;
 		String genre = null;
 		String subGenre = null;
-		String type = null;
-		String subType = null;
 		if(jsonArray != null) {
 			try {
 				segment = jsonArray.getJSONObject(0).getJSONObject("segment").getString("name");
@@ -39,17 +43,7 @@ public class Attraction extends Events {
 			} catch(Exception e) {
 				subGenre = "";
 			}
-			try {
-				type = jsonArray.getJSONObject(0).getJSONObject("type").getString("name");
-			} catch(Exception e) {
-				type = "";
-			}
-			try {
-				subType = jsonArray.getJSONObject(0).getJSONObject("subType").getString("name");
-			} catch(Exception e) {
-				subType = "";
-			}
-			this.generi.add(segment+", "+genre+", "+subGenre+", "+type+", "+subType);
+			this.generi.add(segment+", "+genre+", "+subGenre);
 		}
 	}
 

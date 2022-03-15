@@ -13,8 +13,23 @@ import com.univpm.EsameOOP.Model.Event;
 import com.univpm.EsameOOP.Model.Events;
 import com.univpm.EsameOOP.Service.GetEvents;
 
+/**
+ * Classe per il filtraggio dei dati degli eventi in base al luogo, la data e il genere
+ * @author 99fly
+ *
+ */
+
 @Service
 public class Filters {
+	
+	/**
+	 * Metodo che restituisce un lista contenente tutti gli eventi filtrati secondo un paramentro body passato dal cliente
+	 * @param body
+	 * @return Lista eventi filtratti
+	 * @throws JSONException
+	 * @throws IOException
+	 * @throws ParseException
+	 */
 	
 	public ArrayList<Events> Filter(FiltersBodyClass body) throws JSONException, IOException, ParseException{
 		@SuppressWarnings("unused")
@@ -33,6 +48,13 @@ public class Filters {
 		return eventi;
 	}
 	
+	/**
+	 * Metodo per il filtraggio degli eventi secondo un genere scelto dall'utente
+	 * @param body
+	 * @param eventi
+	 * @return Eventi filtrati per genere
+	 */
+	
 	public ArrayList<Events> filterGenere(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getGenere() != "" && body.getGenere() != null && eventi != null) {
 			for (int i=0;i<eventi.size();i++) {
@@ -44,6 +66,13 @@ public class Filters {
 		}
 		return eventi;
 	}
+	
+	/**
+	 * Metodo per il filtraggio degli eventi secondo un luogo scelto dall'utente
+	 * @param body
+	 * @param eventi
+	 * @return Eventi filtrati per luogo
+	 */
 	
 	public ArrayList<Events> filterLuogo(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getLuogo() != "" && body.getLuogo() != null && eventi != null) {
@@ -57,10 +86,16 @@ public class Filters {
 		return eventi;
 	}
 	
+	/**
+	 * Metodo per il filtraggio degli eventi secondo una data scelta dall'utente
+	 * @param body
+	 * @param eventi
+	 * @return Eventi filtrati per genere
+	 */
+	
 	public ArrayList<Events> filterData(FiltersBodyClass body, ArrayList<Events> eventi) {
 		if (body.getData() != "" && body.getData() != null && eventi != null) {
 			LocalDate data = LocalDate.parse(body.getData());
-			System.out.println(eventi);
 			for (int i=0;i<eventi.size();i++) {
 				if (((Event) eventi.get(i)).getData() != "Unavailable") {
 					String data_sub = ((Event) eventi.get(i)).getData().substring(0,10);

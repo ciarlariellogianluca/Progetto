@@ -14,8 +14,22 @@ import com.univpm.EsameOOP.Model.Event;
 import com.univpm.EsameOOP.Model.Events;
 import com.univpm.EsameOOP.Model.Venue;
 
+/**
+ * Classe che restituisce eventi, attrazioni o sedi in base ad un parametro events passato.
+ * @author 99fly
+ *
+ */
+
 @Service
 public class GetEvents {
+	
+	/**
+	 * Metodo per restituire la lista degli eventi, attrazioni o sedi.
+	 * @param events
+	 * @return
+	 * @throws IOException
+	 * @throws JSONException
+	 */
 	
 	public ArrayList<Events> Parsing(String events) throws IOException,JSONException{
 
@@ -37,6 +51,12 @@ public class GetEvents {
 		return eventi;
 	}
 	
+	/**
+	 * Metodo per restituire le attrazioni.
+	 * @param parser
+	 * @return
+	 */
+	
 	private static ArrayList<Events> GetAttraction(JSONObject parser) {
 		JSONArray data = parser.getJSONObject("_embedded").getJSONArray("attractions");
 		Events evento;
@@ -56,6 +76,12 @@ public class GetEvents {
 		
 		return events;
 	}
+	
+	/**
+	 *  Metodo per restituire le sedi.
+	 * @param parser
+	 * @return
+	 */
 
 	private static ArrayList<Events> GetVenue(JSONObject parser) {
 		JSONArray data = parser.getJSONObject("_embedded").getJSONArray("venues");
@@ -74,7 +100,7 @@ public class GetEvents {
 			evento.setTipo(obj.getString("type"));
 			evento.setNome(obj.getString("name"));
 			((Venue) evento).setLuogo(obj.getString("timezone"));
-			((Venue) evento).setCittà(obj.getJSONObject("city").getString("name"));
+			((Venue) evento).setCitta(obj.getJSONObject("city").getString("name"));
 			((Venue) evento).setIndirizzo(obj.getJSONObject("address").getString("line1"));
 			try {
 			((Venue) evento).setNumero(obj.getJSONObject("ada").getString("adaPhones"));
@@ -91,6 +117,12 @@ public class GetEvents {
 		
 		return events;
 	}
+	
+	/**
+	 *  Metodo per restituire gli eventi.
+	 * @param parser
+	 * @return
+	 */
 
 	private static ArrayList<Events> GetEvent(JSONObject parser) {
 		JSONArray data = parser.getJSONObject("_embedded").getJSONArray("events");

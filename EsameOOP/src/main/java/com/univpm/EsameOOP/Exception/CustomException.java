@@ -3,8 +3,18 @@ package com.univpm.EsameOOP.Exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
-@SuppressWarnings("serial")
+/**
+ * Classe per eccezione personalizzata, che estende Exception 
+ * @author 99fly
+ *
+ */
+
+@SuppressWarnings("serial") //Avvisa la mancanza di un campo serialID.
 public class CustomException extends Exception{
+	
+	/**
+	 * @param out, messaggio di errore personalizzato. 
+	 */
 	
 	public CustomException(String out) {
 		super();

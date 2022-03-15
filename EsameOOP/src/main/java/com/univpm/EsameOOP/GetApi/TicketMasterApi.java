@@ -12,14 +12,25 @@ import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
+/**
+ * Classe per andare a prelevare e restituire i dati tramite API di TicketMaster attraverso un parametro e un'apikey.
+ * @author 99fly
+ *
+ */
+
 public class TicketMasterApi {
+	
+	/**
+	 * Metodo per salvare i dati restituiti dall'API
+	 * @param events
+	 */
 	
 	public static JSONObject ApiData(String events) {
 		String apikey = GetApiKey();
 		String data = "";
 		String line = "";
 		try {
-			String url = "https://app.ticketmaster.com/discovery/v2/"+events+".json?apikey="+apikey;
+			String url = "https://app.ticketmaster.com/discovery/v2/"+events+".json?apikey="+apikey+"&size=100";
 			URLConnection openConnection = new URL(url).openConnection();
 			InputStream in = openConnection.getInputStream();
 			try {
@@ -30,11 +41,15 @@ public class TicketMasterApi {
 				in.close();
 			}
 		} catch (Exception e) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Evento non esistente fare la chiamata /events per vedere cosa viene monitorato");
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Chiamata non esistente fare la chiamata /ShowEvents per vedere cosa viene monitorato");
 		}
 		JSONObject json_data = new JSONObject(data);
 		return json_data;
 	}
+	
+	/**
+	 * Metodo per leggere l'apikey in un file salvato.
+	 */
 	
 	private static String GetApiKey() {
 		String apikey;
