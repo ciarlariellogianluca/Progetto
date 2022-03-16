@@ -175,7 +175,7 @@ nel caso in cui venga aggiunto nel <b> Body</b> il genere e la data vedremo il n
 # UML
 <ul><li><h2><b>CASO D'USO</b></h2></li></ul>
 
-qui
+![Immagine 2022-03-16 180434](https://user-images.githubusercontent.com/64266699/158647127-064902eb-91bc-4164-99a6-4cda05201225.png)
 
 <ul><li><h2><b>CLASSI</b></h2></li></ul>
 
